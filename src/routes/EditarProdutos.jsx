@@ -1,9 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ListaProdutos } from "../components/ListaProdutos";
 import { useState } from "react";
 
 export default function EditarProdutos() {
   document.title = "Editar Produtos";
+
+  //Utilizando redirecionamento de ROTAS com useNavigate();
+  const navigate = useNavigate();
+
 
   //Utilizando o HOOK useParams()
   const { id } = useParams();
@@ -43,6 +47,8 @@ export default function EditarProdutos() {
 
      ListaProdutos.splice(indice,1,produto);
 
+     //Redicerionando apos realizar a edicao do produto filtrado.
+     navigate("/produtos");
   }
 
   return (
