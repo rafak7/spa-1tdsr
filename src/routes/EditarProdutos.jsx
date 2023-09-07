@@ -30,12 +30,27 @@ export default function EditarProdutos() {
 
   }
 
+  const handleSubmit = (event)=>{
+    event.preventDefault();
+
+        let indice;
+
+        ListaProdutos.forEach((item, index, lista)=>{
+          if(item.id === produto.id){
+            indice = index;
+          }
+        });    
+
+     ListaProdutos.splice(indice,1,produto);
+
+  }
+
   return (
     <>
       <h1>Editar Produtos</h1>
 
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <fieldset>
             <legend>Produto Selecionado</legend>
             <div>
