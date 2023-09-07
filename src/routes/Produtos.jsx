@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ListaProdutos } from "../components/ListaProdutos";
 import {AiFillEdit as Editar} from "react-icons/ai";
+import {RiDeleteBin2Fill as Excluir} from "react-icons/ri";
+
 
 export default function Produtos() {
 
